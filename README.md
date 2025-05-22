@@ -14,7 +14,7 @@ A comprehensive collection of web-based utilities and tools built with Next.js, 
 
 ## Live Demo
 
-Visit [All-in-One Tools](https://all-in-one-tools-ashok1708-ashok-chouhans-projects.vercel.app/) to try out the tools.
+Visit [All-in-One Tools](https://all-in-one-tools.vercel.app/) to try out the tools.
 
 ## Prerequisites
 
