@@ -39,7 +39,7 @@ export default function Home() {
       </div>
 
       <footer className="text-xs sm:text-sm text-gray-500 py-4">
-        Made with ❤️ for developers
+       Created By <a href="https://github.com/ashok1708">Ashok Chouhan</a>
       </footer>
     </div>
   );
