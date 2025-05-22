@@ -2,10 +2,13 @@
 import { NextResponse } from 'next/server';
 import { compileString } from 'sass';
 
-export async function POST(req: Request) {
+interface ScssRequest {
+  scss: string;
+}
+
+export async function POST(request: Request) {
     try {
-        const body = await req.json();
-        const scss = body.scss;
+        const { scss }: ScssRequest = await request.json();
 
         if (!scss) {
             return NextResponse.json({ error: 'Missing SCSS input' }, { status: 400 });
@@ -13,9 +16,10 @@ export async function POST(req: Request) {
 
         const result = compileString(scss);
         return NextResponse.json({ css: result.css });
-    } catch (error: any) {
+    } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Compilation error';
         return NextResponse.json(
-            { error: error.message || 'Compilation error' },
+            { error: errorMessage },
             { status: 400 }
         );
     }

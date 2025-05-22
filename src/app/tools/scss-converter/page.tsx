@@ -33,7 +33,7 @@ export default function SCSSConverter() {
             }
         } catch (err) {
             setOutput('');
-            setError('Network error');
+            setError('Network error' + err);
         }
     };
 

@@ -21,7 +21,7 @@ export default function ColorPicker() {
 
       setOutput(formats);
     } catch (err) {
-      setOutput('Invalid color format');
+      setOutput('Invalid color format :' + err);
     }
   };
 
@@ -42,7 +42,8 @@ export default function ColorPicker() {
 
     const max = Math.max(r, g, b);
     const min = Math.min(r, g, b);
-    let h = 0, s = 0, l = (max + min) / 2;
+    let h = 0, s = 0;
+   const  l = (max + min) / 2
 
     if (max !== min) {
       const d = max - min;

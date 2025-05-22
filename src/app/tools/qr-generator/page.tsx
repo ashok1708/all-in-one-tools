@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import QRCode from 'qrcode';
 import { Editor } from '@monaco-editor/react';
+import Image from 'next/image';
 
 export default function QRGenerator() {
   const [input, setInput] = useState('');
@@ -62,7 +63,14 @@ export default function QRGenerator() {
         <div className="space-y-2">
           <label className="text-sm font-medium">Generated QR Code</label>
           <div className="h-full border rounded-lg overflow-hidden flex items-center justify-center bg-white">
-            {qrCode && <img src={qrCode} alt="Generated QR Code" />}
+            {qrCode && (
+              <Image 
+                src={qrCode} 
+                alt="Generated QR Code"
+                width={200}
+                height={200}
+              />
+            )}
           </div>
         </div>
       </div>
