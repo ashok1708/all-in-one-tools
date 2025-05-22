@@ -15,7 +15,7 @@ export default function ClientLayout({
   return (
     <>
       <Sidebar />
-      <main className="ml-64 p-8 min-h-screen bg-white dark:bg-gray-800 shadow-sm transition-colors duration-200 ease-in-out">
+      <main className="p-4 sm:p-6 lg:p-8 min-h-screen bg-white dark:bg-gray-800 shadow-sm transition-colors duration-200 ease-in-out lg:ml-64">
         {children}
       </main>
     </>
